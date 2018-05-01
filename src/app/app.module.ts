@@ -12,7 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IgnDataProvider } from '../providers/ign-data/ign-data';
 import {HttpModule} from '@angular/http';
-import { Vibration} from '@ionic-native/vibration'
+import { Vibration} from '@ionic-native/vibration';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 
@@ -27,6 +28,7 @@ import { Vibration} from '@ionic-native/vibration'
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpModule
   ],
   bootstrap: [IonicApp],

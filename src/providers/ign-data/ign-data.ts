@@ -1,8 +1,6 @@
 import { Http, Response, ResponseOptions} from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/observable';
 /*
   Generated class for the IgnDataProvider provider.

@@ -14,10 +14,10 @@ export class HomePage {
   constructor(public navCtrl: NavController, private ignData: IgnDataProvider, private vibration: Vibration) {
     this.getIgnData();
   }
+  
   articlesList:any = [];
-  getIgnData(){
 
-    //this.ignData.getData().subscribe(data => console.log(data));
+  getIgnData(){
     this.ignData.getData().subscribe(data => {
       //console.log(data);
       for(let i = 0; i < 10; i++)  { 
@@ -25,8 +25,6 @@ export class HomePage {
       }
       console.log(this.articlesList);
     })
-    //this.ignData.getData().subscribe(data => this.articlesList = data);
-    
   }
 
 

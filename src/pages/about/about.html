@@ -1,11 +1,21 @@
 <ion-header>
   <ion-navbar color="danger">
     <ion-title>
-      About
+      Message Of The Day
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+    <ion-list >
+      <ion-item>
+          <ion-input type="text" placeholder="myNote" name="myNote" [(ngModel)]="myNote"></ion-input>
+      </ion-item>
+      <button ion-button (click)="addNote()">Add Note</button>
+        <ion-list>
+          <ul>
+              <h2>{{savedNote}}</h2>
+          </ul>
+        </ion-list>
+      </ion-list>
 </ion-content>
