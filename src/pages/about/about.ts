@@ -13,20 +13,58 @@ export class AboutPage {
   savedNote:string;
 
   constructor(public navCtrl: NavController,private storage: Storage) {
+    this.restoreData()
+  }
+
+  public discussArray = [];
+
+  addNote(myNote){
+
+    var discuss = {
+      note: myNote
+    };
+    var account;
+    //this.storage.clear();
+
+    this.storage.get('loginNumber').then((data)=>{
+      account = data;
+    });
+
+    this.storage.get('accounts').then((data)=>{
+      this.discussArray[this.discussArray.length] = data[account].username+": "+discuss.note;
+    });
     
-  }
+    
 
-  addNote(){
-    this.storage.set("myNote",this.myNote);
-    this.storage.get("myNote").then((data) => {
-      this.savedNote = data;
+    this.storage.set('discussion',this.discussArray).then((data)=>{
+      console.log(this.discussArray);
     });
   }
 
-  ionViewWillEnter(){
-    this.storage.get("myNote").then((data) => {
-      this.savedNote = data;
-    });
-  }
+  // ionViewWillEnter(){
+  //   this.storage.get("myNote").then((data) => {
+  //     this.savedNote = data;
+  //   });
+  // }
+
+
+restoreData(){
+  var count; 
+  
+  this.storage.get('discussion').then((data)=>{
+    count = data.length;
+  });
+
+  this.storage.get('discussion').then((data) =>{
+    for (let i = 0; i< count; i++) {
+      this.discussArray.push(data[i])
+    }
+    
+    console.log(this.discussArray);
+  });
+
+}
+
+
 
 }

@@ -11,11 +11,11 @@
       <ion-item>
           <ion-input type="text" placeholder="myNote" name="myNote" [(ngModel)]="myNote"></ion-input>
       </ion-item>
-      <button ion-button (click)="addNote()">Add Note</button>
-        <ion-list>
-          <ul>
-              <h2>{{savedNote}}</h2>
-          </ul>
+      <button ion-button (click)="addNote(myNote)">Add Note</button>
+      <ion-list >
+          <ion-item *ngFor="let myNote of discussArray">
+              <h5>{{myNote}}</h5>
+          </ion-item>
         </ion-list>
       </ion-list>
 </ion-content>
