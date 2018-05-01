@@ -20,23 +20,7 @@ export class IgnDataProvider {
   }
 
   getData(){
-    return this.http.get(this.url)
-    .do((res: Response) => console.log(res))
-    .map((res: Response) => res.json())
-    .catch(this.catchError)
-  }
-
-  private catchError(error:Response | any){
-    console.log(error);
-    return Observable.throw(error.json().error || "Server Error");
-  }
-
-  private logReponse(res:Response){
-    console.log(res);
-  }
-
-  private extractData(res: Response){
-    return res.json()
+    return this.http.get(this.url).map(res=>res.json());
   }
 
 }

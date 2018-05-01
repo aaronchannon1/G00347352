@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IgnDataProvider } from '../providers/ign-data/ign-data';
 import {HttpModule} from '@angular/http';
+import { Vibration} from '@ionic-native/vibration'
 
 
 
@@ -40,7 +41,8 @@ import {HttpModule} from '@angular/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler,},
-    IgnDataProvider
+    IgnDataProvider,
+    Vibration
   ]
 })
 export class AppModule {}

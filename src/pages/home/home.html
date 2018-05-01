@@ -1,11 +1,17 @@
 <ion-header>
   <ion-navbar color="danger">
-    <ion-title>IGN News Storys</ion-title>
+    <ion-title>IGN News Stories</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let description of descriptionList">
-    <ion-item >{{description.description}} {{description.title}}</ion-item>
+  <ion-list >
+    <ion-item *ngFor="let articles of articlesList">
+      <h4>{{articles.title}}</h4><br>
+      <a href="{{articles.url}}">      
+        <img src="{{articles.urlToImage}}"><br>
+        <h5>Read more...</h5>
+      </a>
+    </ion-item>
   </ion-list>
 </ion-content>
