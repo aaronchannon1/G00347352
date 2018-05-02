@@ -1,5 +1,5 @@
 This is the user guide for my mobile app project.
-
+IMORTANT - Best experience in mobile view
 1. Data Binding between html pages and .ts files
 2. Has tabs to navigate between pages
 3. Has a vibrate plugin for android when switching between tabs
