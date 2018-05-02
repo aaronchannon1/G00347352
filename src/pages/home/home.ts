@@ -12,14 +12,15 @@ export class HomePage {
   
 
   constructor(public navCtrl: NavController, private ignData: IgnDataProvider, private vibration: Vibration) {
+    //On Load calls function
     this.getIgnData();
   }
   
   articlesList:any = [];
 
   getIgnData(){
+    //Subscribing to the provider
     this.ignData.getData().subscribe(data => {
-      //console.log(data);
       for(let i = 0; i < 10; i++)  { 
         this.articlesList.push(data.articles[i])
       }
@@ -28,9 +29,10 @@ export class HomePage {
   }
 
 
-    vibrate(){
-      this.vibration.vibrate(30);
-    }
-  
+  //Vibrate function// IMPORTANT -- also incorporated when your switch tabs on android
+  vibrate(){
+    this.vibration.vibrate(30);
+  }
+
 
 }

@@ -5,8 +5,8 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content>
+<!-- Displays signin page if found variable = 1 // else displays loggedIn Template -->
+<ion-content *ngIf="found == 1;else loggedIn">
 <h2 padding>Login</h2>
   <form >
     <br>
@@ -20,8 +20,23 @@
     </ion-list>
     <button ion-button block color="danger" (click)="login(username,password)">Login</button>
     <button ion-button block (click)="signUpPage()">Sign Up</button>
-    <!-- <button ion-button block (click)="restoreData()">restoreData</button> -->
-    <button ion-button block (click)="clear()">Clear</button>
+    <!-- <button ion-button block (click)="clear()">Clear</button> -->
   </form>
 
 </ion-content>
+
+<!-- Logged in template displays account info -->
+<ng-template #loggedIn>
+    <ion-content padding>
+        <ion-item>
+            <h1><b>Name:</b> {{accountArray[accountNumber].profileName}}</h1>
+        </ion-item>
+        <ion-item>
+            <h1><b>Username:</b> {{accountArray[accountNumber].username}}</h1>
+        </ion-item>
+        <ion-item>
+            <h1><b>Email:</b> {{accountArray[accountNumber].profileEmail}}</h1>
+        </ion-item>
+        <button ion-button block (click)="logOut()">LogOut</button>
+    </ion-content>
+</ng-template>

@@ -17,6 +17,8 @@ export class TabsPage {
   constructor(private vibration: Vibration) {
    
   }
+
+  //Vibrate function
   vibrate(){
     this.vibration.vibrate(30);
   }

@@ -1,20 +1,23 @@
 <ion-header>
   <ion-navbar color="danger">
     <ion-title>
-      Message Of The Day
+      Chat Page
     </ion-title>
   </ion-navbar>
 </ion-header>
 
+<!-- Content for Chat Page/Message board -->
 <ion-content padding>
     <ion-list >
       <ion-item>
           <ion-input type="text" placeholder="myNote" name="myNote" [(ngModel)]="myNote"></ion-input>
       </ion-item>
       <button ion-button (click)="addNote(myNote)">Add Note</button>
+      <button ion-button (click)="clear() ">Clear Discussion</button>
       <ion-list >
+        <!-- ngFor to display all notes from array -->
           <ion-item *ngFor="let myNote of discussArray">
-              <h5>{{myNote}}</h5>
+              <h4>{{myNote}}</h4>
           </ion-item>
         </ion-list>
       </ion-list>

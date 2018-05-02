@@ -5,9 +5,11 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list >
+  <ion-list>
+    <!-- Using ngFor to display all articles in the IGN API -->
     <ion-item *ngFor="let articles of articlesList">
-      <h4 item-width="100%">{{articles.title}}</h4><br>
+      <!-- Displaying title, image and linking to the article -->
+      <h4 item-width="100%"><b>{{articles.title}}</b></h4><br>
       <a href="{{articles.url}}">      
         <img src="{{articles.urlToImage}}"><br>
         <h5>Read Full Article Here...</h5>
